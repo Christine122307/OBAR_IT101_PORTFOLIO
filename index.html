@@ -1,0 +1,1120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Portfolio ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --pink: #ed8caf;
+  --dark-pink: #c85d88;
+  --light-pink: #fff0f5;
+  --cream: #fffaf8;
+  --text: #694354;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--light-pink);
+  color: var(--text);
+  overflow: hidden;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,250,248,.92);
+  backdrop-filter: blur(12px);
+  z-index: 20;
+  border-bottom: 1px solid #f6d3e0;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--dark-pink);
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links button {
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.nav-links button:hover,
+.nav-links button.active {
+  color: var(--dark-pink);
+  font-weight: bold;
+}
+
+.slide {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  padding: 100px 8% 80px;
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto;
+  animation: slideIn .5s ease;
+}
+
+.slide.active {
+  display: flex;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.content {
+  width: 100%;
+  max-width: 1050px;
+  animation: appear .65s ease both;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.eyebrow {
+  color: var(--dark-pink);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: .78rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(2.3rem, 5vw, 3.8rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: clamp(2.1rem, 4.5vw, 3.8rem);
+  margin-bottom: 15px;
+}
+
+h1 span, h2 span {
+  color: var(--dark-pink);
+}
+
+p {
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  text-align: left;
+}
+
+.hero-text {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.hero-text p {
+  max-width: 650px;
+  margin: 0 0 25px;
+}
+
+.btn {
+  display: inline-block;
+  border: 0;
+  padding: 13px 23px;
+  border-radius: 30px;
+  background: var(--dark-pink);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .3s;
+  margin: 5px 8px 5px 0;
+  font-family: inherit;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px #d980a74a;
+}
+
+.btn.outline {
+  color: var(--dark-pink);
+  border: 1px solid var(--pink);
+  background: #ffffffa8;
+}
+
+.portrait {
+  width: 100%;
+  max-width: 750px;
+  height: 280px;
+  margin: 0 auto;
+  padding: 0;
+  border: 10px solid rgb(190, 156, 180);
+  border-radius: 25px;
+  background: #fff0f5;
+  overflow: hidden;
+  box-shadow: 0 10px 25px #d77fa64d;
+}
+
+.profile-pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-heading p {
+  max-width: 620px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: rgba(255,255,255,.78);
+  padding: 27px 23px;
+  border: 1px solid #f4d0df;
+  border-radius: 24px;
+  box-shadow: 0 8px 25px #c46b8a12;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px) rotate(-.5deg);
+  border-color: #e9a4bf;
+}
+
+.card .emoji {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+
+.card h3 {
+  color: var(--dark-pink);
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: .92rem;
+}
+
+.skill {
+  margin-top: 18px;
+}
+
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.bar {
+  height: 10px;
+  border-radius: 20px;
+  background: #f7dbe6;
+  overflow: hidden;
+}
+
+.bar span {
+  display: block;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #f3b2cc, #d96694);
+}
+
+.project-number {
+  color: #e5a0ba;
+  font-size: 2rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 12px;
+}
+
+.contact-box {
+  max-width: 650px;
+  margin: auto;
+  padding: 40px;
+  text-align: center;
+  background: #ffffffbd;
+  border: 1px solid #f3cada;
+  border-radius: 30px;
+  box-shadow: 0 15px 40px #b65b7c12;
+}
+
+.contact-box p {
+  margin: 15px 0 25px;
+}
+
+footer {
+  position: fixed;
+  z-index: 25;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 7%;
+  background: rgba(255,250,248,.92);
+  border-top: 1px solid #f6d3e0;
+  font-size: .85rem;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.controls button {
+  border: 1px solid #e8a5bf;
+  color: var(--dark-pink);
+  background: white;
+  border-radius: 50px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.controls button:hover {
+  background: var(--dark-pink);
+  color: white;
+}
+
+#counter {
+  color: var(--dark-pink);
+  font-weight: 700;
+  min-width: 40px;
+  text-align: center;
+}
+
+.decor {
+  position: fixed;
+  z-index: 1;
+  pointer-events: none;
+  color: #e8a0bb;
+  opacity: .7;
+}
+
+.decor.one { top: 14%; left: 3%; font-size: 2rem; }
+.decor.two { top: 20%; right: 4%; font-size: 1.7rem; }
+.decor.three { bottom: 14%; right: 6%; font-size: 2rem; }
+
+/* ABOUT ME FLIP CARDS */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  max-width: 900px;
+  margin: 25px auto 0;
+}
+
+.flip-card {
+  background: transparent;
+  border: none;
+  height: 170px;
+  perspective: 1000px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .7s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  border-radius: 22px;
+  border: 1px solid #f1bfd2;
+  box-shadow: 0 8px 22px #c46b8a18;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-front {
+  background: linear-gradient(145deg, #fffafd, #fbdce8);
+}
+
+.flip-front span {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.flip-front h3,
+.flip-back h3 {
+  color: #c85d88;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.flip-front small {
+  color: #bd7895;
+  font-size: .75rem;
+}
+
+.flip-back {
+  background: linear-gradient(145deg, #ed8caf, #c85d88);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-back h3,
+.flip-back p {
+  color: white;
+}
+
+.flip-back p {
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+.flip-card:hover .flip-front {
+  box-shadow: 0 10px 25px #d77fa64d;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 760px) {
+  nav {
+    padding: 14px 4%;
+  }
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links button {
+    font-size: .72rem;
+  }
+
+  .slide {
+    padding: 100px 6% 100px;
+  }
+
+  .hero-text h1 {
+    font-size: clamp(2rem, 7vw, 2.5rem);
+    white-space: normal;
+  }
+
+  .portrait {
+    height: 230px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    margin-bottom: 22px;
+  }
+
+  footer {
+    padding: 12px 4%;
+    font-size: .72rem;
+  }
+
+  .controls {
+    gap: 5px;
+  }
+
+  .controls button {
+    padding: 8px 10px;
+  }
+
+  .contact-box {
+    padding: 25px 18px;
+  }
+
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .flip-card {
+    height: 155px;
+  }
+
+  .flip-front,
+  .flip-back {
+    padding: 12px;
+  }
+
+  .flip-back p {
+    font-size: .72rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-links {
+    gap: 6px;
+  }
+
+  .nav-links button {
+    font-size: .65rem;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .flip-card {
+    height: 145px;
+  }
+}
+/* ===== NEW HOME PAGE DESIGN ===== */
+
+.home-slide {
+  position: relative;
+  isolation: isolate;
+  background: #fff0f5;
+  padding: 100px 5% 80px;
+  overflow: hidden;
+}
+
+/* DARK PINK LEFT BACKGROUND */
+.home-slide::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(145deg, #ed8caf, #d65f91);
+  border-radius: 0 45% 45% 0 / 0 50% 50% 0;
+  z-index: -1;
+}
+
+/* TWO COLUMN LAYOUT */
+.home-slide .content.hero {
+  width: 100%;
+  max-width: 1250px;
+  min-height: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+/* LEFT PROFILE AREA */
+.hero-image {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+}
+
+.profile-frame {
+  width: min(100%, 410px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  padding: 10px;
+  background: #fff0f5;
+  border: 5px solid #fbd6e5;
+  box-shadow: 0 12px 35px #8f315d55;
+  overflow: hidden;
+}
+
+.profile-pic {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* DECORATIONS */
+.photo-heart,
+.photo-star,
+.photo-flower {
+  position: absolute;
+  color: #fff0f5;
+  font-size: 3rem;
+}
+
+.photo-heart {
+  left: 3%;
+  top: 45%;
+}
+
+.photo-star {
+  right: 5%;
+  top: 5%;
+}
+
+.photo-flower {
+  right: 5%;
+  bottom: 8%;
+}
+
+/* RIGHT INTRODUCTION */
+.home-slide .hero-text {
+  width: 100%;
+  max-width: 600px;
+  text-align: left;
+  margin: auto;
+}
+
+.hello-label {
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #f8c5d9;
+  border: 2px solid #e98caf;
+  color: #9e365f;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.home-slide .hero-text h1 {
+  font-family: 'Playfair Display', serif;
+  color: #a83260;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  white-space: normal;
+  margin-bottom: 25px;
+}
+
+.home-slide .hero-text p {
+  color: #694354;
+  font-size: 1.08rem;
+  line-height: 1.9;
+  max-width: 550px;
+  margin-bottom: 28px;
+}
+
+/* BUTTON */
+.home-slide .btn {
+  padding: 15px 30px;
+  border-radius: 35px;
+  background: linear-gradient(90deg, #d65f91, #bd3e75);
+  color: white;
+  font-size: 1rem;
+  box-shadow: 0 5px 12px #d65f9140;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 760px) {
+  .home-slide {
+    padding: 110px 6% 100px;
+    overflow-y: auto;
+  }
+
+  .home-slide::before {
+    width: 100%;
+    height: 45%;
+    border-radius: 0 0 50% 15%;
+  }
+
+  .home-slide .content.hero {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .hero-image {
+    padding: 10px;
+  }
+
+  .profile-frame {
+    width: min(70vw, 280px);
+  }
+
+  .home-slide .hero-text {
+    text-align: center;
+  }
+
+  .home-slide .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .home-slide .hero-text p {
+    font-size: .95rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+ 
+}
+
+/* EDUCATION BACKGROUND */
+.education-content {
+  width: 100%;
+  max-width: 1050px;
+  margin: auto;
+  text-align: center;
+}
+
+.education-title {
+  text-align: center;
+  margin: 0 0 30px;
+  color: var(--dark-pink);
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.education-table-wrap {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  overflow-x: auto;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px #c46b8a18;
+}
+
+.education-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  background: #fff0f5;
+}
+
+.education-table th {
+  background: var(--dark-pink);
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+
+.education-table td {
+  padding: 15px;
+  text-align: center;
+  border: 1px solid #f5b6cc;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+
+.education-table tr:nth-child(even) {
+  background: #ffe0eb;
+}
+
+@media (max-width: 760px) {
+  .education-title {
+    margin-bottom: 22px;
+  }
+
+  .education-table th,
+  .education-table td {
+    padding: 12px;
+    font-size: .85rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo"> My Portfolio</div>
+  <div class="nav-links">
+    <button class="active" onclick="goTo(0)">Home</button>
+    <button onclick="goTo(1)">About</button>
+    <button onclick="goTo(2)">Education</button>
+     <button onclick="goTo(3)">Skills</button>
+    <button onclick="goTo(4)">Projects</button>
+    <button onclick="goTo(5)">Contact</button>
+  </div>
+</nav>
+
+<div class="decor one">♡</div>
+<div class="decor two">✿</div>
+<div class="decor three">୨୧</div>
+
+
+<!-- SLIDE 1: HOME -->
+<section class="slide active home-slide">
+  <div class="content hero">
+
+    <!-- LEFT SIDE: PROFILE PICTURE -->
+    <div class="hero-image">
+      <div class="profile-frame">
+        <img
+ src="image.html/46a0494e-ed2b-4738-a30a-d1708a80b008.jpeg" 
+  alt="My Profile Picture" 
+  class="profile-pic">
+      </div>
+      <span class="photo-heart">♡</span>
+      <span class="photo-star">✧</span>
+      <span class="photo-flower">✿</span>
+    </div>
+
+    <!-- RIGHT SIDE: INTRODUCTION -->
+    <div class="hero-text">
+
+      <div class="hello-label">Every page tells a story</div>
+
+      <h1>Christine Obar</h1>
+
+      <p>
+        A student, a dreamer, and a girl with big dreams.
+        Welcome to my personal portfolio, where I share a
+        little about myself, my skills, and the things I love creating. ♥
+      </p>
+
+      <button class="btn" type="button" onclick="goTo(1)">
+        Get to know me →
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SLIDE 2: ABOUT -->
+<section class="slide">
+  <div class="content">
+    <div class="section-heading">
+      <div class="eyebrow">♡ The girl behind the screen</div>
+      <h2>Get to Know Me</h2>
+      <p>Click each little box to discover something about me. ♡</p>
+    </div>
+
+    <div class="about-grid">
+
+      <button class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span>ღ</span>
+            <h3>Who I Am</h3>
+            <small>Click to discover ♡</small>
+          </div>
+          <div class="flip-back">
+            <h3>Who I Am</h3>
+            <p>I'm Christine Obar, a student who loves learning new things, exploring ideas, and improving myself every day.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span>☆</span>
+            <h3>My Dreams</h3>
+            <small>Click to discover ♡</small>
+          </div>
+          <div class="flip-back">
+            <h3>My Dreams</h3>
+            <p>My dream is to become successful, build a good future, make my family proud, and achieve the goals I've always wished for.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span>♡</span>
+            <h3>My Hobbies</h3>
+            <small>Click to discover ♡</small>
+          </div>
+          <div class="flip-back">
+            <h3>My Hobbies</h3>
+            <p>I enjoy reading stories, exploring creative ideas, listening to music, and spending time doing things I love.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span>∞</span>
+            <h3>My Personality</h3>
+            <small>Click to discover ♡</small>
+          </div>
+          <div class="flip-back">
+            <h3>My Personality</h3>
+            <p>I'm a dreamer who can be shy at first, but I love expressing myself, learning, and discovering new things.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span>✧</span>
+            <h3>My Favorites</h3>
+            <small>Click to discover ♡</small>
+          </div>
+          <div class="flip-back">
+            <h3>My Favorites</h3>
+            <p>I love pink, beautiful aesthetics, meaningful moments, and everything that makes life a little more special.</p>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" onclick="this.classList.toggle('flipped')">
+        <div class="flip-inner">
+          <div class="flip-front">
+            <span>❀</span>
+            <h3>My Life Motto</h3>
+            <small>Click to discover ♡</small>
+          </div>
+          <div class="flip-back">
+            <h3>My Life Motto</h3>
+            <p>"Believe in yourself, trust the process, and never stop chasing your dreams."</p>
+          </div>
+        </div>
+      </button>
+
+    </div>
+
+    <div style="text-align:center; margin-top:25px">
+      <button class="btn" onclick="goTo(3)">Next: My Skills →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: EDUCATION -->
+<section class="slide" id="education">
+  <div class="content education-content">
+    <h1 class="education-title">EDUCATION BACKGROUND </h1>
+
+    <div class="education-table-wrap">
+      <table class="education-table">
+        <tr>
+          <th>Educational Level</th>
+          <th>School Name</th>
+          <th>Year Graduated</th>
+        </tr>
+        <tr>
+          <td>Elementary</td>
+          <td>[Patpata Elementary School]</td>
+          <td>2018</td>
+        </tr>
+        <tr>
+          <td>Junior High School</td>
+          <td>Castor Z. Concepcion Memorial National High School</td>
+          <td>2024</td>
+        </tr>
+        <tr>
+          <td>Senior High School</td>
+          <td>Castor Z. Concepcion Memorial National High School</td>
+          <td>2026</td>
+        </tr>
+        <tr>
+          <td>College</td>
+          <td>Ilocos Sur Polytechnic State College – Tagudin Campus</td>
+          <td>1st Year – Present</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 3: SKILLS -->
+<section class="slide">
+  <div class="content">
+    <div class="section-heading">
+      <div class="eyebrow">✧ Things I'm learning</div>
+      <h2>My <span>Skills</span></h2>
+      <p>Every expert starts as a beginner. These are skills I can develop and improve.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="emoji">💻</div>
+        <h3>Web Development</h3>
+        <p>Learning to create websites using HTML, CSS, and JavaScript.</p>
+        <div class="skill">
+          <div class="skill-label"><span>Learning progress</span><span>Growing</span></div>
+          <div class="bar"><span style="width:45%"></span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="emoji">🎨</div>
+        <h3>Creativity</h3>
+        <p>Exploring layouts, colors, designs, and creative presentations.</p>
+        <div class="skill">
+          <div class="skill-label"><span>Learning progress</span><span>Growing</span></div>
+          <div class="bar"><span style="width:70%"></span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="emoji">📝</div>
+        <h3>Communication</h3>
+        <p>Practicing writing, sharing ideas, and expressing myself clearly.</p>
+        <div class="skill">
+          <div class="skill-label"><span>Learning progress</span><span>Growing</span></div>
+          <div class="bar"><span style="width:65%"></span></div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:25px">
+      <button class="btn" onclick="goTo(4)">Next: My Projects →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 4: PROJECTS -->
+<section class="slide">
+  <div class="content">
+    <div class="section-heading">
+      <div class="eyebrow">♡ Little things I've created</div>
+      <h2>My <span>Projects</span></h2>
+      <p>Every project is a chance to learn something new and turn an idea into reality.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="project-number">01.</div>
+        <div class="emoji">🌐</div>
+        <h3>My First Website</h3>
+        <p>A personal website built to practice HTML, CSS, and web design.</p>
+      </div>
+      <div class="card">
+        <div class="project-number">02.</div>
+        <div class="emoji">🎀</div>
+        <h3>Creative Design</h3>
+        <p>A collection of aesthetic layouts, colors, and creative ideas.</p>
+      </div>
+      <div class="card">
+        <div class="project-number">03.</div>
+        <div class="emoji">💡</div>
+        <h3>Future Project</h3>
+        <p>A space for my next idea, new experiments, and future creations.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:25px">
+      <button class="btn" onclick="goTo(5)">Next: Contact Me →</button>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: CONTACT -->
+<section class="slide">
+  <div class="content">
+    <div class="contact-box">
+      <div class="eyebrow">୨୧ Let's stay connected</div>
+      <h2>Say <span>Hello!</span> </h2>
+      <p>
+        Thank you for visiting my little corner of the internet.
+        I'm always happy to learn, connect, and explore new opportunities.
+      </p>
+      <p>♡ Keep dreaming, keep growing, and stay lovely. ♡</p>
+      <a class="btn" href="mailto:your@email.com">Email Me 💌</a>
+      <br><br>
+      <button class="btn outline" onclick="goTo(0)">Back to Home ↺</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div></div>
+  <div class="controls">
+    <button onclick="previousSlide()">← Back</button>
+    <span id="counter">1 / 6</span>
+    <button onclick="nextSlide()">Next →</button>
+  </div>
+</footer>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const navButtons = document.querySelectorAll('.nav-links button');
+const counter = document.getElementById('counter');
+
+let current = 0;
+
+function goTo(index) {
+  current = index;
+
+  slides.forEach((slide, i) => {
+    slide.classList.remove('active');
+
+    if (i === index) {
+      slide.classList.add('active');
+    }
+  });
+
+  navButtons.forEach((button, i) => {
+    button.classList.toggle('active', i === index);
+  });
+
+  if (counter) {
+    counter.textContent = (current + 1) + ' / ' + slides.length;
+  }
+}
+
+function nextSlide() {
+  goTo((current + 1) % slides.length);
+}
+
+function previousSlide() {
+  goTo((current - 1 + slides.length) % slides.length);
+}
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowRight') nextSlide();
+  if (event.key === 'ArrowLeft') previousSlide();
+});
+</script>
